@@ -4,6 +4,8 @@ python:
 install:
   - "pip install pytest"
 script: python -m pytest tests/
+before_deploy:
+  - cd src
 deploy:
   provider: lambda
   function_name: "mytestlambda"
@@ -14,4 +16,3 @@ deploy:
   edge: true
   on:
     branch: master
-

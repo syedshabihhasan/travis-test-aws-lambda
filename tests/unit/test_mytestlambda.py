@@ -1,5 +1,5 @@
 from unittest import TestCase
-from mytestlambda import myfunction_handler
+from src.mytestlambda import myfunction_handler
 
 
 class TestMyTestLambda(TestCase):
