@@ -4,3 +4,12 @@ python:
 install:
   - "pip install pytest"
 script: python -m pytest tests/
+deploy:
+  provider: lambda
+  function_name: "mytestlambda"
+  region: "us-east-1"
+  runtime: "python3.7"
+  edge: true
+  on:
+    branch: master
+
