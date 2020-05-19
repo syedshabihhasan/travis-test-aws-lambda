@@ -9,7 +9,8 @@ deploy:
   function_name: "mytestlambda"
   region: "us-east-1"
   runtime: "python3.7"
-  handler_name: "mytestlambda.mytestlambda.myfunction_handler"
+  handler_name: "myfunction_handler"
+  module_name: "mytestlambda"
   edge: true
   on:
     branch: master
