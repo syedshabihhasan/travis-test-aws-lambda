@@ -1,18 +1,22 @@
 language: python
 python:
-  - "3.7"
+- '3.7'
 install:
-  - "pip install pytest"
+- pip install pytest
 script: python -m pytest tests/
 before_deploy:
-  - cd src
+- cd src
 deploy:
   provider: lambda
-  function_name: "mytestlambda"
-  region: "us-east-1"
-  runtime: "python3.7"
-  handler_name: "myfunction_handler"
-  module_name: "mytestlambda"
+  function_name: mytestlambda
+  region: us-east-1
+  runtime: python3.7
+  handler_name: myfunction_handler
+  module_name: mytestlambda
   edge: true
   on:
     branch: master
+env:
+  global:
+  - secure: ea4va3Rx0LPcYQBoTQVVqoDG1LjD4gnzLEZwzqpvPU9WH8CL3jq8R/OkjPUiDYUhfncjqsURNZBkPZ2oISQH1TddXlRjhbVHqguTb/U3DGbh/UTgkIx7HpOSkv5kUIxGQLRiFb5Jp3jGxmNB2NMtbn3UzVknVuS3PbaZY62XPLOnV2VGmoC7aTEQCtLJ3RPreWhZhzsastJiADuDNS0Z/MaeuuBja89WMCQkByDZfEzBmMcDSoWgD10J6uB435szi/7SxOgcaIroIgEOl/EKYgk56cCc6Q4NSVPJK0uOi8woooKTlklweGuqKCkTRjYufOq0n6GocJ9L2nfik3n5R9aiqpR3yPvrW+NUp+/HRCyQuNtuUhgasdLOkJulVw083EBxdJevk8Oc0EYrNfEsknvrDWuJD1OatiQqwRE2qzL1sQ9F1ALU4QtdFYIr3p8hY7ajzKJfr+2Hpu75XOOZuMDIHGij1TnPHebP23iIr9Z+1+wIHHpYhpeurtAEOw+ifGZaegw1JA9n1wLwzlLVSlI8c/bi7TRT+sMnlbH2Lu/oyIVF6ISI7VmlBj31x6WbKBbskiJCvL5Rfv+EDe6GD+zrmV/qFT/822T11OFsJnxaTv+sHXQtFXTNnjvBr6G5Y/lxnyH/rp9L8v4HyoJ9pILj9FoLytp8pJLHhNIjPQ0=
+  - secure: R/zkSM3IimU604/KTp6YAkbqYEN+dXNTfZJZSDnkjyJcpogvVc2PTH7FcM9x5QPhEyi28liVSTtn5CWgwYQKW0M/XfUiikfm9FLcth8ISmrBzclVacOhpi5C/9QK4/4W+FQhk6KrXawF7Zcerzo/OvJs7jj5mRvxdWUUGi84HK0Vi4jFpTPVJ3HfYgZAzb02IPdepZrC1uAptVlBqKxz0PXzvTF90Eev7JZ/nFYzKhFnfifAeEQ0PZ5qMEwvxIhVfJjERzm3P469yQDqZEIWnQ1qTujAE6NuD1QUdSmbKTsMZgeazNsSCgbkZ7k6BhukBeFJmbDYrB3sA1buPZySutiNNAjTgAMrwX0/DAVuW18qPjX42XHXv5NcHN+Z/nRDZVGNKT5VMRkoLD8MpJbjJ5ND7L7QixDZZOz4975wVOBGtOf+8qnoXnYqoLrycxikDkW00kyy2orpkHoSHzAIB1t25xpzdSM8StjxaNIyPk906cPMTKibUXMq9iaGv4AiDs7awYLJixpn+zcJebkLN2/aVP3IM/AGiWhdbeazkS9q+/l8ak9JEqGgZ4c7TnfGD20uEpxu3AkduBLTym0NZ6cgwbEEbxmRQXLmIzSbe573REiwak4InWeAjiaKTW8BfehNqMQpOsulzmjKC9bHj8wgA2HaiYC/Vnv93p4SUpk=
